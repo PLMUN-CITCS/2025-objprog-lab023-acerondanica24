@@ -1,11 +1,11 @@
-
+// Define the BankAccount class with attributes and methods
 class BankAccount {
     // Attributes with different access modifiers
-    public String accountHolder;   
-    private double balance;        
-    protected String accountType; 
+    public String accountHolder;   // Accessible everywhere
+    private double balance;        // Accessible only within this class
+    protected String accountType;  // Accessible within package and subclasses
 
-
+    // Constructor to initialize the attributes
     public BankAccount(String accountHolder, double balance, String accountType) {
         this.accountHolder = accountHolder;
         this.balance = balance;
@@ -43,4 +43,8 @@ public class BankAccountDemo {
         myAccount.withdraw(100.0); // Withdrawing $100
 
         // Displaying account details
-        System.out.println("Account Holde
+        System.out.println("Account Holder: " + myAccount.accountHolder);  // Public access
+        System.out.println("Account Type: " + myAccount.accountType);      // Protected access
+        System.out.println("Current Balance: $" + myAccount.getBalance()); // Accessing private balance via method
+    }
+}
